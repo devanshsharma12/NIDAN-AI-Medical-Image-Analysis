@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./static/src/output.css" rel="stylesheet">
+    <title>NIDAN AI : Medical Image Analysis</title>
+</head>
+
+<body>
+    <header class="bg-blue-900 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="text-3xl font-bold tracking-wide">
+                <a href="{{ url_for('index') }}">NIDAN AI</a>
+            </div>            <nav class="hidden md:flex space-x-8">
+                <a href="{{ url_for('index') }}" class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">Home</a>
+                <a href="{{ url_for('features') }}" class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">Features</a>
+                <a href="{{ url_for('documentation') }}" class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">Documentation</a>
+                <a href="{{ url_for('about') }}" class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">About</a>
+                <a href="{{ url_for('blog') }}" class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="sm:text-4xl text-3xl font-medium title-font text-gray-900 mb-4">About This Project</h1>
+                <p class="text-base leading-relaxed xl:w-2/3 lg:w-3/4 mx-auto text-gray-500s">
+                    This Medical Image Analysis System is designed to assist doctors and researchers by automating the
+                    diagnosis of critical health conditions through advanced deep learning models. The system
+                    intelligently classifies and segments medical images such as eye scans, brain MRIs, and chest
+                    X-rays.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap -m-4 text-center">
+                <!-- Block 1 -->
+                <div class="p-4 md:w-1/3 w-full">
+                    <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+                        <h2 class="title-font font-medium text-2xl text-gray-900">Multi-Disease Detection</h2>
+                        <p class="leading-relaxed mt-2">Supports classification for Diabetic Retinopathy, Brain Tumors,
+                            COVID-19, Pneumonia, and more using dedicated deep learning models.</p>
+                    </div>
+                </div>
+
+                <!-- Block 2 -->
+                <div class="p-4 md:w-1/3 w-full">
+                    <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+                        <h2 class="title-font font-medium text-2xl text-gray-900">Automated Segmentation</h2>
+                        <p class="leading-relaxed mt-2">Identifies and highlights infected regions in chest X-rays and
+                            brain MRIs with pixel-wise accuracy using U-Net-based segmentation models.</p>
+                    </div>
+                </div>
+
+                <!-- Block 3 -->
+                <div class="p-4 md:w-1/3 w-full">
+                    <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+                        <h2 class="title-font font-medium text-2xl text-gray-900">Smart Image Classification</h2>
+                        <p class="leading-relaxed mt-2">Automatically detects whether the input image is from the eye,
+                            brain, or chest, and routes it to the correct model pipeline.</p>
+                    </div>
+                </div>
+
+                <!-- Block 4 -->
+                <div class="p-4 md:w-1/3 w-full">
+                    <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+                        <h2 class="title-font font-medium text-2xl text-gray-900">Confidence Scoring</h2>
+                        <p class="leading-relaxed mt-2">Each prediction comes with a confidence percentage, helping
+                            medical professionals understand the certainty of the result for better decision-making.</p>
+                    </div>
+                </div>
+
+                <!-- Block 5 -->
+                <div class="p-4 md:w-1/3 w-full">
+                    <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+                        <h2 class="title-font font-medium text-2xl text-gray-900">Grad-CAM Visualization</h2>
+                        <p class="leading-relaxed mt-2">Highlights key regions in the image that influenced the model’s
+                            decision, providing transparency and trust in the AI system’s output.</p>
+                    </div>
+                </div>
+
+                <!-- Block 6 -->
+                <div class="p-4 md:w-1/3 w-full">
+                    <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+                        <h2 class="title-font font-medium text-2xl text-gray-900">Web-Based Interface</h2>
+                        <p class="leading-relaxed mt-2">Easily accessible through a clean and responsive web app built
+                            with Flask and Tailwind CSS, allowing image uploads, results view, and downloads.</p>
+                    </div>
+                </div>
+
+                <!-- Block 7 -->
+                <div class="p-4 md:w-1/3 w-full">
+                    <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+                        <h2 class="title-font font-medium text-2xl text-gray-900">Multi-Model Support</h2>
+                        <p class="leading-relaxed mt-2">Automatically selects between eye disease and brain tumor models
+                            using image type detection for accurate diagnosis and analysis.</p>
+                    </div>
+                </div>
+
+                <!-- Block 8 -->
+                <div class="p-4 md:w-1/3 w-full">
+                    <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+                        <h2 class="title-font font-medium text-2xl text-gray-900">Downloadable Results</h2>
+                        <p class="leading-relaxed mt-2">Users can download segmented images with highlighted tumor
+                            regions, enabling easy sharing with medical professionals.</p>
+                    </div>
+                </div>
+
+                <!-- Block 9 -->
+                <div class="p-4 md:w-1/3 w-full">
+                    <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+                        <h2 class="title-font font-medium text-2xl text-gray-900">Interactive UI & Animations</h2>
+                        <p class="leading-relaxed mt-2">Enhanced with Tailwind CSS and subtle animations for a modern,
+                            engaging user experience with dynamic effects like zoom and blink.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team or Motivation Section (Optional) -->
+        <div class="mt-20 text-center">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-2">Project Motivation</h2>
+            <p class="text-gray-600 text-base max-w-2xl mx-auto">
+                Developed as a B.Tech final year project by a passionate team of AI enthusiasts, this system aims
+                to bridge the gap between medical diagnostics and intelligent software solutions. It is a step toward
+                accessible and scalable healthcare diagnostics.
+            </p>
+        </div>
+        </div>
+    </section>
+
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-col text-center w-full mb-20">
+                <h1 class="sm:text-4xl text-3xl font-medium title-font mb-4 text-gray-900">Meet Our Team</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+                    We are a dedicated group of developers and researchers behind the Medical Image Analysis System,
+                    working to bring AI-powered diagnostics to healthcare.
+                </p>
+            </div>
+            <div class="flex flex-wrap -m-4">
+
+                <!-- Devansh Sharma -->
+                <div class="p-4 lg:w-1/5 md:w-1/2 w-full">
+                    <div class="h-full flex flex-col items-center text-center">
+                        <img alt="Devansh Sharma"
+                            class="shrink-0 rounded-lg w-40 h-40 object-cover object-center mb-4"
+                            src="https://th.bing.com/th/id/OIP.yGdXWVvfPromnpVF5a3YRgHaH6?w=161&h=180&c=7&r=0&o=7&pid=1.7&rm=3">
+                        <div class="w-full">
+                            <h2 class="title-font font-medium text-lg text-gray-900">Devansh Sharma</h2>
+                            <h3 class="text-gray-500 mb-3">AI & Web Developer</h3>
+                            <p class="mb-4">
+                                Built the complete web interface for the Medical Image Analysis
+                                System and Integrate the web and models.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prashant Dixit -->
+                <div class="p-4 lg:w-1/5 md:w-1/2 w-full">
+                    <div class="h-full flex flex-col items-center text-center">
+                        <img alt="Prashant Dixit"
+                            class="shrink-0 rounded-lg w-40 h-40 object-cover object-center mb-4"
+                            src="https://th.bing.com/th/id/OIP.YFgVHpX_4FzULd_K5FtfzwHaKt?w=115&h=180&c=7&r=0&o=5&pid=1.7">
+                        <div class="w-full">
+                            <h2 class="title-font font-medium text-lg text-gray-900">Prashant Dixit</h2>
+                            <h3 class="text-gray-500 mb-3">AI/ML Engineer</h3>
+                            <p class="mb-4">
+                                Focused on training machine learning models for disease detection and classification
+                                using deep learning techniques and medical datasets.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rahul Dixit -->
+                <div class="p-4 lg:w-1/5 md:w-1/2 w-full">
+                    <div class="h-full flex flex-col items-center text-center">
+                        <img alt="Rahul Dixit"
+                            class="shrink-0 rounded-lg w-40 h-40 object-cover object-center mb-4"
+                            src="https://th.bing.com/th/id/OIP.1Qj9hrUVUr2XX-5M6Hg5OQHaEK?w=288&h=180&c=7&r=0&o=5&pid=1.7">
+                        <div class="w-full">
+                            <h2 class="title-font font-medium text-lg text-gray-900">Rahul Dixit</h2>
+                            <h3 class="text-gray-500 mb-3">Model Architect & Researcher</h3>
+                            <p class="mb-4">
+                                Designed multi-task learning models for disease classification and segmentation.
+                                Conducts research on model optimization.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anushree Sharma -->
+                <div class="p-4 lg:w-1/5 md:w-1/2 w-full">
+                    <div class="h-full flex flex-col items-center text-center">
+                        <img alt="Anushree Sharma"
+                            class="shrink-0 rounded-lg w-40 h-40 object-cover object-center mb-4"
+                            src="https://th.bing.com/th/id/OIP.FiKIFb0ggSv5VMsdv6s1zwHaHa?w=178&h=180&c=7&r=0&o=5&pid=1.7">
+                        <div class="w-full">
+                            <h2 class="title-font font-medium text-lg text-gray-900">Anushree Sharma</h2>
+                            <h3 class="text-gray-500 mb-3">Data Analyst</h3>
+                            <p class="mb-4">
+                                Handled image preprocessing, augmentation, and exploration of medical imaging datasets
+                                to support model training and evaluation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Anuj Parashar -->
+                <div class="p-4 lg:w-1/5 md:w-1/2 w-full">
+                    <div class="h-full flex flex-col items-center text-center">
+                        <img alt="Dr. Anuj Parashar"
+                            class="shrink-0 rounded-lg w-40 h-40 object-cover object-center mb-4"
+                            src="https://th.bing.com/th/id/OIP.Ok5ibBmzjVKNxeJh3qbgcQHaE5?w=221&h=180&c=7&r=0&o=5&pid=1.7">
+                        <div class="w-full">
+                            <h2 class="title-font font-medium text-lg text-gray-900">Dr. Anuj Parashar</h2>
+                            <h3 class="text-gray-500 mb-3">Project Guide</h3>
+                            <p class="mb-4">
+                                Provides expert guidance and supervision throughout the project. Ensures scientific
+                                rigor and clinical relevance in medical image analysis research.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer
+        class="relative bg-linear-to-b from-gray-100 to-gray-50 text-gray-700 pt-20 pb-10 border-t border-indigo-200"
+        data-aos="fade-up">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
+
+            <div class="md:col-span-2">
+                <h2 class="text-2xl font-bold mb-4">NIDAN AI</h2>
+                <p class="text-sm">We deliver high-quality services to help your business thrive in a digital
+                    world. Let's build
+                    something great together.</p>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-bold mb-4">Contact</h2>
+                <p class="text-sm">Phone: <a href="tel:850-123-5021"
+                        class="text-indigo-600 hover:text-indigo-400 transition">850-123-5021</a></p>
+                <p class="text-sm">Email: <a href="mailto:info@lorem.mail"
+                        class="text-indigo-600 hover:text-indigo-400 transition">NIDANAI1@gmail.com</a></p>
+                <p class="text-sm">Address: <a href="https://www.google.com/maps" target="_blank"
+                        class="text-indigo-600 hover:text-indigo-400 transition">312 Lovely Street, NY</a></p>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-bold mb-4">Follow Us</h2>
+                <div class="flex space-x-4 mt-2">
+                    <!-- Facebook -->
+                    <a href="https://facebook.com" target="_blank"
+                        class="text-gray-600 hover:text-blue-600 transition-transform transform hover:-translate-y-1 hover:scale-110">
+                        <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                            <path
+                                d="M22 12a10 10 0 10-11.5 9.95v-7.05h-2.7V12h2.7V9.4c0-2.7 1.6-4.2 4-4.2 1.2 0 2.5.2 2.5.2v2.8h-1.4c-1.4 0-1.8.9-1.8 1.8V12h3l-.5 2.9h-2.5v7.05A10 10 0 0022 12z" />
+                        </svg>
+                    </a>
+
+                    <!-- Twitter -->
+                    <a href="https://twitter.com" target="_blank"
+                        class="text-gray-600 hover:text-blue-400 transition-transform transform hover:-translate-y-1 hover:scale-110">
+                        <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012 7.48V8a10.66 10.66 0 01-9-5s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                        </svg>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://instagram.com" target="_blank"
+                        class="text-gray-600 hover:text-pink-500 transition-transform transform hover:-translate-y-1 hover:scale-110">
+                        <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                            <path
+                                d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-2a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
+                        </svg>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com" target="_blank"
+                        class="text-gray-600 hover:text-blue-700 transition-transform transform hover:-translate-y-1 hover:scale-110">
+                        <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                            <path
+                                d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.25h-3v-5.6c0-1.337-.025-3.063-1.868-3.063-1.87 0-2.156 1.46-2.156 2.963v5.7h-3v-10h2.88v1.4h.04c.4-.755 1.38-1.55 2.84-1.55 3.04 0 3.6 2 3.6 4.6v5.55z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-12 text-xs text-gray-500">
+            &copy; 2025 NIDAN AI. All rights reserved.
+        </div>
+
+        <!-- Back to Top Button -->
+        <a href="#"
+            class="fixed bottom-6 right-6 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-500 transition transform hover:-translate-y-1"
+            title="Back to Top">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+            </svg>
+        </a>
+    </footer>
+
+</body>
+
+</html>

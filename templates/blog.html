@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./static/src/output.css" rel="stylesheet">
+    <title>NIDAN AI : Blog</title>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .animate-slide-up {
+            opacity: 0;
+            animation: slideUp 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header with existing navigation -->
+    <header class="bg-blue-900 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="text-3xl font-bold tracking-wide">
+                <a href="{{ url_for('index') }}">NIDAN AI</a>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="{{ url_for('index') }}" class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">Home
+                </a>
+                <a href="{{ url_for('features') }}" class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">
+                    Features</a>
+                <a href="{{ url_for('documentation') }}" class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">
+                    Documentation</a>
+                <a href="{{ url_for('about') }}" class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">
+                    About</a>
+                <a href="{{ url_for('blog') }}" class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">
+                    Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Section -->
+    <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12 animate-fade-in">
+            <h1 class="text-4xl font-bold text-blue-900 mb-4">NIDAN AI Blog & Updates</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Stay updated with our latest developments in medical image
+                analysis, AI technologies, and healthcare innovations.</p>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Blog Post 1 -->
+            <article class="animate-slide-up bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <div class="block">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI in Medical Imaging"
+                            class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Technology
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold text-gray-900 mb-2">The Future of AI in Medical Imaging</h2>
+                        <p class="text-gray-600 mb-4">Explore how artificial intelligence is revolutionizing medical image analysis, improving diagnostic accuracy and patient outcomes.</p>
+                        <div class="flex items-center text-blue-600 font-medium mt-4">
+                            Read More
+                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="animate-slide-up bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <div class="block">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Brain Tumor Detection"
+                            class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Research
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Advancements in Brain Tumor Detection</h2>
+                        <p class="text-gray-600 mb-4">Learn about the latest research in automated brain tumor detection using deep learning algorithms and MRI analysis.</p>
+                        <div class="flex items-center text-blue-600 font-medium mt-4">
+                            Read More
+                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="animate-slide-up bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <div class="block">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Healthcare Innovation"
+                            class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Innovation
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Integrating AI into Clinical Workflows</h2>
+                        <p class="text-gray-600 mb-4">Discover how AI tools are being seamlessly integrated into healthcare workflows to enhance efficiency and accuracy.</p>
+                        <div class="flex items-center text-blue-600 font-medium mt-4">
+                            Read More
+                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 4 -->
+            <article class="animate-slide-up bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <div class="block">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Data Privacy"
+                            class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Security
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Ensuring Data Privacy in Medical AI</h2>
+                        <p class="text-gray-600 mb-4">Understanding the importance of data privacy and security measures in AI-powered medical image analysis systems.</p>
+                        <div class="flex items-center text-blue-600 font-medium mt-4">
+                            Read More
+                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 5 -->
+            <article class="animate-slide-up bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <div class="block">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Case Studies"
+                            class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Case Study
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Real-World Applications of NIDAN AI</h2>
+                        <p class="text-gray-600 mb-4">Case studies showcasing how NIDAN AI has helped healthcare professionals in diagnosing and treating patients.</p>
+                        <div class="flex items-center text-blue-600 font-medium mt-4">
+                            Read More
+                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 6 -->
+            <article class="animate-slide-up bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                <div class="block">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Future Trends"
+                            class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Trends
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Emerging Trends in Medical AI</h2>
+                        <p class="text-gray-600 mb-4">Stay ahead of the curve with insights into emerging trends and technologies shaping the future of medical AI.</p>
+                        <div class="flex items-center text-blue-600 font-medium mt-4">
+                            Read More
+                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-linear-to-b from-gray-100 to-gray-50 text-gray-700 pt-20 pb-10 border-t border-indigo-200">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6">
+            <div>
+                <h2 class="text-2xl font-bold mb-4">NIDAN AI</h2>
+                <p class="text-sm">We deliver high-quality services to help healthcare professionals with medical image analysis.</p>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold mb-4">Navigation</h2>
+                <nav class="space-y-2">
+                    <a href="{{ url_for('index') }}" class="block text-sm text-gray-600 hover:text-blue-600">Home</a>
+                    <a href="{{ url_for('features') }}" class="block text-sm text-gray-600 hover:text-blue-600">Features</a>
+                    <a href="{{ url_for('documentation') }}" class="block text-sm text-gray-600 hover:text-blue-600">Documentation</a>
+                    <a href="{{ url_for('about') }}" class="block text-sm text-gray-600 hover:text-blue-600">About</a>
+                    <a href="{{ url_for('blog') }}" class="block text-sm text-gray-600 hover:text-blue-600">Blog</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="text-center mt-12 text-xs text-gray-500">
+            &copy; 2025 NIDAN AI. All rights reserved.
+        </div>
+
+        <!-- Back to Top Button -->
+        <a href="#"
+            class="fixed bottom-6 right-6 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-500 transition transform hover:-translate-y-1"
+            title="Back to Top">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+            </svg>
+        </a>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-slide-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>

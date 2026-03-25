@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./static/src/output.css" rel="stylesheet">
+  <title>NIDAN AI : Medical Image Analysis</title>
+</head>
+
+<body>
+  <header class="bg-blue-900 text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="text-3xl font-bold tracking-wide">
+        <a href="{{ url_for('index') }}">NIDAN AI</a>
+      </div>      <nav class="hidden md:flex space-x-8">
+        <a href="{{ url_for('index') }}" class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">Home</a>
+        <a href="{{ url_for('features') }}"
+          class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">Features</a>
+        <a href="{{ url_for('documentation') }}"
+          class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">Documentation</a>
+        <a href="{{ url_for('about') }}" class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">About</a>
+        <a href="{{ url_for('blog') }}" class="text-white hover:text-blue-200 px-3 py-2 text-sm font-medium">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto flex flex-wrap">
+      <div class="flex w-full mb-20 flex-wrap">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 lg:w-1/3 lg:mb-0 mb-4">
+          Advanced AI-Powered Medical Diagnosis
+        </h1>
+        <p class="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">
+          NIDAN AI revolutionizes healthcare by using state-of-the-art deep learning models for detecting eye diseases,
+          brain tumors, and chest abnormalities. Upload your scan and let our intelligent system provide instant,
+          accurate insights.
+        </p>
+
+      </div>
+      <div class="flex flex-wrap md:-m-2 -m-1">
+        <div class="flex flex-wrap w-1/2">
+          <div class="md:p-2 p-1 w-1/2">
+            <img alt="gallery" class="w-full object-cover h-full object-center block"
+              src="data:image/jpeg;base64,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">
+          </div>
+          <div class="md:p-2 p-1 w-1/2">
+            <img alt="gallery" class="w-full object-cover h-full object-center block"
+              src="https://th.bing.com/th/id/OIP.3jiX-I4Ic1522x387v3cDgHaE7?w=245&h=180&c=7&r=0&o=5&pid=1.7">
+          </div>
+          <div class="md:p-2 p-1 w-full">
+            <img alt="gallery" class="w-full h-full object-cover object-center block"
+              src="https://th.bing.com/th/id/OIP.mK1LQKH0ClszOy9zAI6ytQHaEE?w=294&h=180&c=7&r=0&o=5&pid=1.7">
+          </div>
+        </div>
+        <div class="flex flex-wrap w-1/2">
+          <div class="md:p-2 p-1 w-full">
+            <img alt="gallery" class="w-full h-full object-cover object-center block"
+              src="https://th.bing.com/th/id/OIP.j87lkb4sWsWtftYtgAcf-wHaEC?w=300&h=180&c=7&r=0&o=5&pid=1.7">
+          </div>
+          <div class="md:p-2 p-1 w-1/2">
+            <img alt="gallery" class="w-full object-cover h-full object-center block"
+              src="https://th.bing.com/th/id/OIP.u-Xz6ShL8oA1RG4JF0xdywHaFj?w=195&h=180&c=7&r=0&o=5&pid=1.7">
+          </div>
+          <div class="md:p-2 p-1 w-1/2">
+            <img alt="gallery" class="w-full object-cover h-full object-center block"
+              src="https://th.bing.com/th/id/OIP.7CDztgMH2nSOCMva-3I7kgHaEU?w=281&h=180&c=7&r=0&o=5&pid=1.7">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="text-gray-600 body-font bg-gray-50 animate-fade-in">
+    <div class="container px-5 py-24 mx-auto">
+      <h1 class="text-4xl font-bold text-center text-blue-700 mb-12 animate-slide-up">📝 NIDAN AI – Blog & Updates</h1>
+      <div class="flex flex-wrap -m-4">
+        <!-- Blog 1 -->
+        <div class="p-4 md:w-1/3 animate-slide-up" style="animation-delay: 0.2s;">
+          <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center"
+              src="https://source.unsplash.com/720x400/?ai,healthcare" alt="blog">
+            <div class="p-6">
+              <h2 class="tracking-widest text-xs title-font font-medium text-blue-400 mb-1">DEEP LEARNING</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">How AI Detects Diabetic Retinopathy</h1>
+              <p class="leading-relaxed mb-3">We explore how our EfficientNet-based model accurately classifies 5 stages
+                of diabetic retinopathy using retinal fundus images.</p>
+              <div class="flex items-center flex-wrap">
+                <a href="#" class="text-indigo-500 inline-flex items-center">Learn More
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog 2 -->
+        <div class="p-4 md:w-1/3 animate-slide-up" style="animation-delay: 0.4s;">
+          <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center"
+              src="https://source.unsplash.com/720x400/?mri,brain" alt="blog">
+            <div class="p-6">
+              <h2 class="tracking-widest text-xs title-font font-medium text-blue-400 mb-1">SEGMENTATION</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Brain Tumor Detection & Segmentation</h1>
+              <p class="leading-relaxed mb-3">Learn how we use U-Net to accurately segment tumor regions in MRI scans,
+                providing visual masks for doctors and patients.</p>
+              <div class="flex items-center flex-wrap">
+                <a href="#" class="text-indigo-500 inline-flex items-center">Learn More
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog 3 -->
+        <div class="p-4 md:w-1/3 animate-slide-up" style="animation-delay: 0.6s;">
+          <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center"
+              src="https://source.unsplash.com/720x400/?medical,ai" alt="blog">
+            <div class="p-6">
+              <h2 class="tracking-widest text-xs title-font font-medium text-blue-400 mb-1">EXPLAINABLE AI</h2>
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Visualizing Predictions with Grad-CAM</h1>
+              <p class="leading-relaxed mb-3">Explore how we use Grad-CAM to explain AI decisions and highlight the
+                exact regions influencing disease predictions.</p>
+              <div class="flex items-center flex-wrap">
+                <a href="#" class="text-indigo-500 inline-flex items-center">Learn More
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="text-gray-600 body-font bg-gray-50">
+    <div class="container px-5 py-24 mx-auto flex flex-wrap items-start">
+      <h2 class="sm:text-3xl text-2xl text-gray-900 font-semibold title-font mb-4 md:w-2/5">
+        Smart Medical Image Analysis System
+      </h2>
+      <div class="md:w-3/5 md:pl-6">
+        <p class="leading-relaxed text-base mb-4">
+          Our intelligent medical imaging system automatically detects the type of input (eye or brain scan),
+          analyzes it using specialized deep learning models, and provides accurate disease predictions.
+          The system supports classification of diseases like Diabetic Retinopathy, Brain Tumors, and more.
+          It also performs image segmentation to highlight affected regions, delivering visual insights to aid
+          diagnosis.
+        </p>
+        <div class="flex md:mt-4 mt-6">
+          <a href="{{ url_for('upload') }}">
+            <button
+              class="inline-flex text-white bg-indigo-600 hover:bg-indigo-700 border-0 py-2 px-6 focus:outline-none rounded-2xl shadow-md transition duration-300 ease-in-out">
+              Upload Image
+            </button>
+          </a>
+
+          <a href="{{ url_for('upload') }}"
+            class="text-indigo-600 inline-flex items-center ml-4 font-medium hover:underline">
+            Learn More
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer
+    class="relative bg-linear-to-b from-gray-100 to-gray-50 text-gray-700 pt-20 pb-10 border-t border-indigo-200"
+    data-aos="fade-up">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6">
+
+      <div class="md:col-span-2">
+        <h2 class="text-2xl font-bold mb-4">NIDAN AI</h2>
+        <p class="text-sm">We deliver high-quality services to help your business thrive in a digital world. Let's build
+          something great together.</p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold mb-4">Contact</h2>
+        <p class="text-sm">Phone: <a href="tel:850-123-5021"
+            class="text-indigo-600 hover:text-indigo-400 transition">850-123-5021</a></p>
+        <p class="text-sm">Email: <a href="mailto:info@lorem.mail"
+            class="text-indigo-600 hover:text-indigo-400 transition">NIDANAI1@gmail.com</a></p>
+        <p class="text-sm">Address: <a href="https://www.google.com/maps" target="_blank"
+            class="text-indigo-600 hover:text-indigo-400 transition">312 Lovely Street, NY</a></p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold mb-4">Follow Us</h2>
+        <div class="flex space-x-4 mt-2">
+          <!-- Facebook -->
+          <a href="https://facebook.com" target="_blank"
+            class="text-gray-600 hover:text-blue-600 transition-transform transform hover:-translate-y-1 hover:scale-110">
+            <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+              <path
+                d="M22 12a10 10 0 10-11.5 9.95v-7.05h-2.7V12h2.7V9.4c0-2.7 1.6-4.2 4-4.2 1.2 0 2.5.2 2.5.2v2.8h-1.4c-1.4 0-1.8.9-1.8 1.8V12h3l-.5 2.9h-2.5v7.05A10 10 0 0022 12z" />
+            </svg>
+          </a>
+
+          <!-- Twitter -->
+          <a href="https://twitter.com" target="_blank"
+            class="text-gray-600 hover:text-blue-400 transition-transform transform hover:-translate-y-1 hover:scale-110">
+            <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012 7.48V8a10.66 10.66 0 01-9-5s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://instagram.com" target="_blank"
+            class="text-gray-600 hover:text-pink-500 transition-transform transform hover:-translate-y-1 hover:scale-110">
+            <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+              <path
+                d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-2a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
+            </svg>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com" target="_blank"
+            class="text-gray-600 hover:text-blue-700 transition-transform transform hover:-translate-y-1 hover:scale-110">
+            <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+              <path
+                d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.25h-3v-5.6c0-1.337-.025-3.063-1.868-3.063-1.87 0-2.156 1.46-2.156 2.963v5.7h-3v-10h2.88v1.4h.04c.4-.755 1.38-1.55 2.84-1.55 3.04 0 3.6 2 3.6 4.6v5.55z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-12 text-xs text-gray-500">
+      &copy; 2025 NIDAN AI. All rights reserved.
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#"
+      class="fixed bottom-6 right-6 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-500 transition transform hover:-translate-y-1"
+      title="Back to Top">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+      </svg>
+    </a>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // File Upload Preview
+    const dropzone = document.getElementById('dropzone');
+    const input = document.getElementById('file-upload');
+    const preview = document.getElementById('preview');
+
+    dropzone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropzone.classList.add('border-indigo-600');
+    });
+
+    dropzone.addEventListener('dragleave', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('border-indigo-600');
+    });
+
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('border-indigo-600');
+      const file = e.dataTransfer.files[0];
+      displayPreview(file);
+    });
+
+    input.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      displayPreview(file);
+    });
+
+    function displayPreview(file) {
+      const reader = new FileReader();
+      preview.classList.add('loading');
+      reader.onload = () => {
+        preview.src = reader.result;
+        preview.classList.remove('hidden');
+        preview.classList.remove('loading');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // AOS Initialization
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+
+</body>
+
+</html>
