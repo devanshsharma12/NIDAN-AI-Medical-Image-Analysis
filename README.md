@@ -87,30 +87,6 @@ Tailwind CSS | UI Design
 
 ---
 
-📁 Project Structure
-
-Nidan-AI-Medical-Image-Analysis/
-├── app.py
-├── predict.py
-├── download_models.py
-├── requirements.txt
-├── README.md
-├── utils/
-│   ├── preprocess.py
-│   ├── decode_result.py
-│   └── detect_type.py
-├── templates/
-│   ├── index.html
-│   └── result.html
-├── static/
-│   ├── css/
-│   ├── js/
-│   └── uploads/
-└── models/
-    ├── my_model.keras
-    └── best_brain_tumor_model.keras
----
-
 📥 Download Models
 
 ⚠️ Models are not included in this repository due to large size.
