@@ -99,8 +99,6 @@ models/
 
 🔗 Download from Google Drive:
 
-👉 https://drive.google.com/your-model-link
-
 Steps:
 
 Download both models
